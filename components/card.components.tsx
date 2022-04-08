@@ -1,8 +1,8 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Theme, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { FC } from "react";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   root: {
     backgroundColor: "white",
     display: "flex",
@@ -12,9 +12,8 @@ const useStyles = makeStyles({
     width: 270,
     height: 275,
     borderRadius: 5,
-    marginRight: 30,
     position: "relative",
-    boxShadow: "0px 2px 5px 3px #E5E5E5",
+    boxShadow: "0px 2px 4px 1px #E5E5E5",
     border: "1px solid #E5E5E5",
   },
   imageCard: {
@@ -50,7 +49,12 @@ const useStyles = makeStyles({
     backgroundColor: "transparent",
     margin: "0 5px 0 5px",
   },
-});
+  [theme.breakpoints.down('mobile')]: {
+    root: {
+      width: 200,
+    }
+  },
+}));
 
 const CardComponent: FC = () => {
   const classes = useStyles();
