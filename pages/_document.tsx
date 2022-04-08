@@ -7,14 +7,26 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Nunito&display=optional"
-            rel="stylesheet"
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="true"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat&display=optional"
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap"
             rel="stylesheet"
           />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="true"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <body>
           <Main />
@@ -65,8 +77,8 @@ MyDocument.getInitialProps = async (ctx) => {
     ...initialProps,
     // Styles fragment is rendered after the app and page rendering finish.
     styles: [
-      ...React.Children.toArray(initialProps.styles),
-      sheets.getStyleElement(),
+      // ...React.Children.toArray(initialProps.styles),
+      // sheets.getStyleElement(),
     ],
   };
 };

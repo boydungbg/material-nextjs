@@ -1,10 +1,9 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { ThemeProvider } from '@mui/system';
+import { ThemeProvider } from "@mui/system";
 import { createTheme } from "@mui/material";
 
-
-declare module '@mui/material/styles' {
+declare module "@mui/material/styles" {
   interface BreakpointOverrides {
     xs: false; // removes the `xs` breakpoint
     sm: false;
@@ -21,9 +20,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   let theme = createTheme({
     breakpoints: {
       values: {
-        mobile: 768,
-        tablet: 1024,
-        desktop: 1200,
+        mobile: 600,
+        tablet: 900,
+        desktop: 1300,
       },
     },
   });
@@ -32,8 +31,8 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <Component {...pageProps} />
     </ThemeProvider>
-
   );
 }
 
+//withRedux wrapper that passes the store to the App Component
 export default MyApp;

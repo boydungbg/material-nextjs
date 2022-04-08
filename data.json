@@ -1,0 +1,67 @@
+{
+  "tours": [
+    {
+      "image": "/images/image_1.png",
+      "ariPort": "Nội Bài",
+      "city": "Hà Nội"
+    },
+    {
+      "image": "/images/image_2.png",
+      "ariPort": "Tân Sơn Nhất",
+      "city": "Tp.HCM"
+    },
+    {
+      "image": "/images/image_1.png",
+      "ariPort": "Nội Bài",
+      "city": "Hà Nội"
+    },
+    {
+      "image": "/images/image_2.png",
+      "ariPort": "Tân Sơn Nhất",
+      "city": "Tp.HCM"
+    }
+  ],
+  "customer_review": {
+    "total_point": 5.0,
+    "count_review": 510,
+    "rate_point": [
+      {
+        "title": "Sạch sẽ",
+        "point": 5.0
+      },
+      {
+        "title": "Đúng miêu tả",
+        "point": 4.0
+      },
+      {
+        "title": "Nhiệt tình",
+        "point": 3.0
+      },
+      {
+        "title": "Vị trí",
+        "point": 3.0
+      },
+      {
+        "title": "Đáng tiền",
+        "point": 5.0
+      }
+    ],
+    "customer_comments": [
+      {
+        "nameCustomer": "Phạm Ngọc Trinh",
+        "created_at": 1649452423647,
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+      },
+      {
+        "nameCustomer": "Lê Chí Dũng",
+        "created_at": 1649452423647,
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+      },
+      {
+        "nameCustomer": "Mr. Don",
+        "created_at": 1649452423647,
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+      }
+    ]
+  }
+}

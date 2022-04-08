@@ -1,6 +1,8 @@
 import { Box, Button, Theme, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import Image from "next/image";
 import { FC } from "react";
+import { Tour } from "../types/tour";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -9,19 +11,16 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "start",
     alignItems: "center",
     flexDirection: "column",
-    width: 270,
+    minWidth: 270,
     height: 275,
     borderRadius: 5,
     position: "relative",
     boxShadow: "0px 2px 4px 1px #E5E5E5",
     border: "1px solid #E5E5E5",
+    overflow: "hidden",
   },
   imageCard: {
-    height: 150,
-    width: "100%",
-    backgroundImage: "url(/images/image_1.png)",
-    borderTopLeftRadius: 5,
-    borderTopRightRadius: 5,
+    display: "block",
   },
   imageCar: {
     width: 166,
@@ -49,20 +48,75 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: "transparent",
     margin: "0 5px 0 5px",
   },
-  [theme.breakpoints.down('mobile')]: {
+  textButton: {
+    fontWeight: 600,
+    fontSize: 12,
+    lineHeight: "14.5px",
+    color: "#1A2B49",
+    fontFamily: "Montserrat",
+  },
+  [theme.breakpoints.down("desktop")]: {
     root: {
-      width: 200,
-    }
+      minWidth: 210,
+    },
+  },
+  [theme.breakpoints.down("tablet")]: {
+    root: {
+      minWidth: 250,
+    },
+  },
+  [theme.breakpoints.down("tablet")]: {
+    root: {
+      minWidth: 200,
+    },
+    contentCard: {
+      paddingLeft: 17,
+      width: "100%",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "flex-start",
+      alignItems: "flex-start",
+    },
+    actionCard: {
+      width: "100%",
+      display: "flex",
+      padding: "0 17px",
+      alignItems: "center",
+      justifyContent: "space-between",
+    },
+    button: {
+      margin: "0",
+    },
   },
 }));
 
-const CardComponent: FC = () => {
+type Props = {
+  tour: Tour;
+};
+
+const CardComponent: FC<Props> = ({ tour }) => {
   const classes = useStyles();
   return (
     <Box className={`${classes.root}`}>
-      <Box className={`${classes.imageCard}`}></Box>
+      <Image
+        className={`${classes.imageCard}`}
+        src={`${tour.image ?? "/images/image_1.png"}`}
+        alt=""
+        loading="lazy"
+        layout="fixed"
+        width="270px"
+        height="150px"
+      />
       <Box className={`${classes.imageCar}`}>
-        <img src="/images/car.png" alt="" />
+        <Image
+          className={`${classes.imageCard}`}
+          src="/images/car.png"
+          alt=""
+          loading="lazy"
+          layout="fixed"
+          width="166px"
+          height="68px"
+        />
       </Box>
       <Box className={`${classes.imageCar}`}></Box>
       <Box className={`${classes.contentCard}`}>
@@ -74,7 +128,7 @@ const CardComponent: FC = () => {
           component="h5"
           align="center"
         >
-          Nội Bài
+          {tour.ariPort.toUpperCase()}
         </Typography>
         <Typography
           fontWeight={400}
@@ -83,30 +137,16 @@ const CardComponent: FC = () => {
           align="center"
           lineHeight={"16.5px"}
         >
-          Hà Nội
+          {tour.city.toUpperCase()}
         </Typography>
       </Box>
       <Box className={`${classes.actionCard}`}>
-        <button className={`${classes.button}`}>
-          <Typography
-            fontWeight={600}
-            fontSize={12}
-            align="center"
-            lineHeight={"14.5px"}
-          >
-            Tiễn
-          </Typography>
-        </button>
-        <button className={`${classes.button}`}>
-          <Typography
-            fontWeight={600}
-            fontSize={12}
-            align="center"
-            lineHeight={"14.5px"}
-          >
-            Đón
-          </Typography>
-        </button>
+        <Button className={`${classes.button}`}>
+          <Typography className={`${classes.textButton}`}>Tiễn</Typography>
+        </Button>
+        <Button className={`${classes.button}`}>
+          <Typography className={`${classes.textButton}`}>Đón</Typography>
+        </Button>
       </Box>
     </Box>
   );
