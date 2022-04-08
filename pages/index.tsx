@@ -1,9 +1,20 @@
+import { Theme } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import { Box } from "@mui/system";
 import type { NextPage } from "next";
 import CustomerReivewComponent from "../components/customer_review.component";
 import ToursComponent from "../components/tours.component";
-import useStyles from "./index.styles";
-
+const useStyles = makeStyles((theme: Theme) => ({
+  root: {
+    marginTop: 200,
+    marginBottom: 200,
+    backgroundColor: "white",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    height: "100vh",
+  },
+}));
 const Home: NextPage = () => {
   const classes = useStyles();
   return (

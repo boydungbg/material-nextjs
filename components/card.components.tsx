@@ -127,6 +127,7 @@ const CardComponent: FC<Props> = ({ tour }) => {
           lineHeight={"21.8x"}
           component="h5"
           align="center"
+          fontFamily={"Nunito"}
         >
           {tour.ariPort.toUpperCase()}
         </Typography>
@@ -136,6 +137,7 @@ const CardComponent: FC<Props> = ({ tour }) => {
           height="24px"
           align="center"
           lineHeight={"16.5px"}
+          fontFamily={"Nunito"}
         >
           {tour.city.toUpperCase()}
         </Typography>

@@ -6,6 +6,7 @@ import RateStarComponent from "./rate_star.component";
 import data from "../data.json";
 import { Comment } from "../types/comment";
 import { rate } from "../types/rate";
+import Image from "next/image";
 
 const useStyles = makeStyles((theme: Theme) => ({
   "view-block": {
@@ -86,9 +87,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "start",
     alignItems: "center",
     marginBottom: 25,
-    "& div, img": {
+    "& div": {
       marginRight: 10,
     },
+  },
+  image_star: {
+    marginRight: 10,
   },
   title_section_customer_review: {
     marginBottom: "18px",
@@ -211,7 +215,10 @@ const CustomerReivewComponent: FC = () => {
             Khách hàng nhận xét
           </Typography>
           <Box className={`${classes.rate_point_container}`}>
-            <img src="/images/star.svg" className={`${classes.icon_start}`} />
+            <Box className={`${classes.image_star}`}>
+              <Image src="/images/star.svg" width="30px" height="30px" alt="" />
+            </Box>
+
             <Typography
               component="div"
               fontWeight={700}

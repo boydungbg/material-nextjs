@@ -1,5 +1,6 @@
 import { Avatar, Box, Theme, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import Image from "next/image";
 import { FC } from "react";
 import { Comment } from "../types/comment";
 
@@ -112,7 +113,12 @@ const CustomerCommentComponent: FC<Props> = ({ comment }) => {
       </Box>
       <Box className={`${classes.text_comment}`}>
         <Box width="19px" height="15px" mb="10px">
-          <img src="/images/comment.svg" alt="An SVG of an eye" />
+          <Image
+            src="/images/comment.svg"
+            alt="An SVG of an eye"
+            width="19px"
+            height="15px"
+          />
         </Box>
         <Typography component="p">{comment.content}</Typography>
       </Box>
